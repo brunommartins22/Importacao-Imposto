@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+ <changeSet id="ADD NATPRO ON TABPRO" author="Integrado - Bruno">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <columnExists tableName="TABPRO" columnName="NATPRO"/>
+            </not>
+        </preConditions>
+        <sql>
+            ALTER TABLE TABPRO 
+            ADD  NATPRO VARCHAR(4);
+        </sql>
+    </changeSet>
+    <changeSet id="ADD NAT_REC ON TABPROFIL" author="Integrado - Bruno">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <columnExists tableName="TABPROFIL" columnName="NAT_REC"/>
+            </not>
+        </preConditions>
+        <sql>
+            ALTER TABLE TABPROFIL 
+            ADD  NAT_REC VARCHAR(3)
+        </sql>
+    </changeSet>
+    <changeSet id="ADD CSTIPIE ON TABPROFIL" author="Integrado - Bruno">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <columnExists tableName="TABPROFIL" columnName="CSTIPIE"/>
+            </not>
+        </preConditions>
+        <sql>
+            ALTER TABLE TABPROFIL 
+            ADD  CSTIPIE VARCHAR(4)
+        </sql>
+    </changeSet>
+    <changeSet id="ADD CSTPISE ON TABPROFIL" author="Integrado - Bruno">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <columnExists tableName="TABPROFIL" columnName="CSTPISE"/>
+            </not>
+        </preConditions>
+        <sql>
+            ALTER TABLE TABPROFIL 
+            ADD  CSTPISE VARCHAR(4)
+        </sql>
+    </changeSet>
+    <changeSet id="ADD CSTCOFINSE ON TABPROFIL" author="Integrado - Bruno">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <columnExists tableName="TABPROFIL" columnName="CSTCOFINSE"/>
+            </not>
+        </preConditions>
+        <sql>
+            ALTER TABLE TABPROFIL 
+            ADD  CSTCOFINSE VARCHAR(4)
+        </sql>
+    </changeSet>
+    
+
+</databaseChangeLog>
